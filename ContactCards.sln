@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactCards", "ContactCards\ContactCards.csproj", "{8D578E29-1B5E-4F68-8BA4-6A064B8BE38D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactCards", "ContactCards\ContactCards.csproj", "{8D578E29-1B5E-4F68-8BA4-6A064B8BE38D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactCardsTests", "ContactCardsTests\ContactCardsTests.csproj", "{DFF70A6E-4A93-4135-A97A-258BFEDC2483}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{8D578E29-1B5E-4F68-8BA4-6A064B8BE38D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D578E29-1B5E-4F68-8BA4-6A064B8BE38D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D578E29-1B5E-4F68-8BA4-6A064B8BE38D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFF70A6E-4A93-4135-A97A-258BFEDC2483}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFF70A6E-4A93-4135-A97A-258BFEDC2483}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFF70A6E-4A93-4135-A97A-258BFEDC2483}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFF70A6E-4A93-4135-A97A-258BFEDC2483}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

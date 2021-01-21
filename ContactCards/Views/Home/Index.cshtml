@@ -1,5 +1,9 @@
 ﻿@model List<Contact>
 
+@{
+    ViewBag.Title = "Main page";
+}
+
 <table>
     <thead>
         <tr>
@@ -10,20 +14,47 @@
             <th>Note</th>
             <th>Lasttimeaccess</th>
             <th>Image</th>
-        </tr>    
+        </tr>
     </thead>
     <tbody>
-        @foreach(var contact in Model)
+        @foreach (var contact in Model)
         {
-        <tr>
-            <td>@contact.Fullname</td>
-            <td>@contact.Email</td>
-            <td>@contact.Facebook</td>
-            <td>@contact.Twitter</td>
-            <td>@contact.Note</td>
-            <td>@contact.Lasttimeaccess</td>
-            <td><img src="~/uploads/@contact.Imagepath" width="50" height="50"/></td>
-        </tr>
+            <tr>
+                <td>@contact.Fullname</td>
+                <td>@contact.Email</td>
+                <td>@contact.Facebook</td>
+                <td>@contact.Twitter</td>
+                <td>@contact.Note</td>
+                <td>@contact.Lasttimeaccess</td>
+                <td><img src="~/uploads/@contact.Imagepath" width="50" height="50" /></td>
+            </tr>
         }
     </tbody>
 </table>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">BLACK FRIDAY DEAL</div>
+                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-danger">
+                <div class="panel-heading">BLACK FRIDAY DEAL</div>
+                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-success">
+                <div class="panel-heading">BLACK FRIDAY DEAL</div>
+                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>

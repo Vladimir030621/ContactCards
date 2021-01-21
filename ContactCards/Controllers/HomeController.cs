@@ -40,19 +40,26 @@ namespace ContactCards.Controllers
         [HttpPost]
         public IActionResult AddContact(ContactViewModel contactViewModel)
         {
-            var currentContact = new Contact();
+            if(contactViewModel != null)
+            {
+                var currentContact = new Contact();
 
-            currentContact.Fullname = contactViewModel.Fullname;
-            currentContact.Email = contactViewModel.Email;
-            currentContact.Facebook = contactViewModel.Facebook;
-            currentContact.Twitter = contactViewModel.Twitter;
-            currentContact.Note = contactViewModel.Note;
-            currentContact.Lasttimeaccess = DateTime.Now;
-            currentContact.Imagepath = SaveImageFile(contactViewModel.Image);
+                currentContact.Fullname = contactViewModel.Fullname;
+                currentContact.Email = contactViewModel.Email;
+                currentContact.Facebook = contactViewModel.Facebook;
+                currentContact.Twitter = contactViewModel.Twitter;
+                currentContact.Note = contactViewModel.Note;
+                currentContact.Lasttimeaccess = DateTime.Now;
+                currentContact.Imagepath = SaveImageFile(contactViewModel.Image);
 
-            context.AddContact(currentContact);
+                context.AddContact(currentContact);
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return BadRequest();
+            }           
         }
 
         #region Save input csv file
