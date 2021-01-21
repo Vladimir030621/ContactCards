@@ -1,0 +1,105 @@
+﻿a {
+  color: #0366d6;
+}
+
+a:hover {
+    color: dodgerblue;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#myTable th {
+    color: royalblue
+}
+
+#myTable th:hover{
+    color: dodgerblue
+}
+
+#search {
+    position: relative;
+    right: 100px;
+    margin: 20px 0;
+}
+
+#counter {
+    position: relative;
+    left: 550px;
+    font-weight: bold;
+}
+
+#header-wrapper {
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+#header a {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    position: relative;
+    right: 80px;
+    color: black;
+}
+
+#header a:hover {
+    color: darkgray;
+}
+
+.form-horizontal{
+    margin: 20px;
+}
+
+#editform{
+    margin: 20px;
+}
+
+#editform label{
+    font-weight: bold;
+}
+
+#fakeinput {
+    z-index: 0; 
+    position: absolute;
+}
+
+#fileinput {
+    z-index:2; 
+    opacity:0;
+}
