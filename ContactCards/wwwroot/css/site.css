@@ -92,7 +92,7 @@ body {
 
 #editform label{
     font-weight: bold;
-}
+}*/
 
 #fakeinput {
     z-index: 0; 
@@ -103,4 +103,3 @@ body {
     z-index:2; 
     opacity:0;
 }
-*/

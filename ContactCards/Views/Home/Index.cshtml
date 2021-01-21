@@ -1,0 +1,29 @@
+﻿@model List<Contact>
+
+<table>
+    <thead>
+        <tr>
+            <th>Fullname</th>
+            <th>Email</th>
+            <th>Facebook</th>
+            <th>Twitter</th>
+            <th>Note</th>
+            <th>Lasttimeaccess</th>
+            <th>Image</th>
+        </tr>    
+    </thead>
+    <tbody>
+        @foreach(var contact in Model)
+        {
+        <tr>
+            <td>@contact.Fullname</td>
+            <td>@contact.Email</td>
+            <td>@contact.Facebook</td>
+            <td>@contact.Twitter</td>
+            <td>@contact.Note</td>
+            <td>@contact.Lasttimeaccess</td>
+            <td><img src="~/uploads/@contact.Imagepath" width="50" height="50"/></td>
+        </tr>
+        }
+    </tbody>
+</table>

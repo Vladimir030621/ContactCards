@@ -21,7 +21,6 @@ namespace ContactCards.Controllers
         {
             this.context = context;
             hostingEnvironment = environment;
-
         }
 
         [HttpGet]
@@ -39,7 +38,7 @@ namespace ContactCards.Controllers
         }
 
         [HttpPost]
-        public void AddContact(ContactViewModel contactViewModel)
+        public IActionResult AddContact(ContactViewModel contactViewModel)
         {
             var currentContact = new Contact();
 
@@ -49,38 +48,14 @@ namespace ContactCards.Controllers
             currentContact.Twitter = contactViewModel.Twitter;
             currentContact.Note = contactViewModel.Note;
             currentContact.Lasttimeaccess = DateTime.Now;
-            currentContact.Imagepath = SaveUploadedFile(contactViewModel.Image);
+            currentContact.Imagepath = SaveImageFile(contactViewModel.Image);
 
             context.AddContact(currentContact);
+
+            return RedirectToAction("Index");
         }
 
         #region Save input csv file
-        /// <summary>
-        /// Save input csv file
-        /// </summary>
-        /// <param name="inputFile"></param>
-        /// <returns></returns>
-        private string SaveUploadedFile(IFormFile inputFile)
-        {
-            var uniqueFileName = GetUniqueFileName(inputFile.FileName);
-
-            var uploads = Path.Combine(hostingEnvironment.WebRootPath, "uploads");
-
-            var filePath = Path.Combine(uploads, uniqueFileName);
-
-            var newfile = new FileStream(filePath, FileMode.CreateNew);
-
-            inputFile.CopyTo(newfile);
-
-            newfile.Close();
-
-            return filePath;
-        }
-
-        #endregion
-
-
-        #region Save input file
         /// <summary>
         /// Save input csv file
         /// </summary>
@@ -100,10 +75,11 @@ namespace ContactCards.Controllers
 
             newfile.Close();
 
-            return filePath;
+            return uniqueFileName;
         }
 
         #endregion
+
 
         #region Create a unique name for input file
         /// <summary>
@@ -117,7 +93,7 @@ namespace ContactCards.Controllers
 
             return Path.GetFileNameWithoutExtension(fileName)
                       + "_"
-                      + Guid.NewGuid().ToString().Substring(0, 4)
+                      + Guid.NewGuid().ToString()
                       + Path.GetExtension(fileName);
         }
 
