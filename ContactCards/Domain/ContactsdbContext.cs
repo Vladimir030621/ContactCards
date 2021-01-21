@@ -50,7 +50,9 @@ namespace ContactCards.Domain
                     .HasMaxLength(100)
                     .HasColumnName("fullname");
 
-                entity.Property(e => e.Image).HasColumnName("image");
+                entity.Property(e => e.Imagepath)
+                    .HasMaxLength(100)
+                    .HasColumnName("imagepath");
 
                 entity.Property(e => e.Lasttimeaccess).HasColumnName("lasttimeaccess");
 
