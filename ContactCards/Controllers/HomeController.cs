@@ -51,7 +51,7 @@ namespace ContactCards.Controllers
                 currentContact.Note = contactViewModel.Note;
                 currentContact.Lasttimeaccess = DateTime.Now;
                 currentContact.Imagepath = SaveImageFile(contactViewModel.Image);
-
+                
                 context.AddContact(currentContact);
 
                 return RedirectToAction("Index");

@@ -1,4 +1,66 @@
-﻿/*a {
+﻿#image {
+    height: 160px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.panel > .panel-body, .panel-footer {
+    background-image: none;
+    background-color: white;
+    text-align: center;
+    font-size: 24px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+/*p {
+
+    color: #767373;
+    font-size: 16px;
+    font-weight:500;
+}*/
+
+.pname {
+    color: #716565;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#note {
+    font-size: 16px;
+    color: #454343;
+    font-weight: 600;
+    display: none;
+}
+
+#note.show { 
+    display: inline-block;
+    font-size: 16px;
+}
+
+/*#lastaccess, #meettimetext {
+    font-weight: 600;
+}*/
+
+#lastaccess {
+    text-align: left;
+    font-weight: bold;
+}
+
+.icons > * {
+    margin: 10px;
+}
+
+
+
+
+
+
+
+/*a {
   color: #0366d6;
 }
 
@@ -94,7 +156,7 @@ body {
     font-weight: bold;
 }*/
 
-#fakeinput {
+/*#fakeinput {
     z-index: 0; 
     position: absolute;
 }
@@ -103,3 +165,4 @@ body {
     z-index:2; 
     opacity:0;
 }
+*/

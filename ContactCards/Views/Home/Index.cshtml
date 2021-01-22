@@ -4,57 +4,62 @@
     ViewBag.Title = "Main page";
 }
 
-<table>
-    <thead>
-        <tr>
-            <th>Fullname</th>
-            <th>Email</th>
-            <th>Facebook</th>
-            <th>Twitter</th>
-            <th>Note</th>
-            <th>Lasttimeaccess</th>
-            <th>Image</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var contact in Model)
-        {
-            <tr>
-                <td>@contact.Fullname</td>
-                <td>@contact.Email</td>
-                <td>@contact.Facebook</td>
-                <td>@contact.Twitter</td>
-                <td>@contact.Note</td>
-                <td>@contact.Lasttimeaccess</td>
-                <td><img src="~/uploads/@contact.Imagepath" width="50" height="50" /></td>
-            </tr>
-        }
-    </tbody>
-</table>
 
-<div class="container">
+<div class="flex-container">
     <div class="row">
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+        @foreach (var contact in Model.Select((value, i) => new { i, value }))
+        {
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <img src="~/uploads/@contact.value.Imagepath" class="img-responsive img-circle center-block" id="image" alt="Image" />
+                        <p class="pname">@contact.value.Fullname</p>
+                        <p id="meettimetext">every Thursday at 8:00 p.m.</p>
+                        <div class="row">
+                            <div class="icons">
+                                <a href="http://www.facebook.com/@contact.value.Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                <a href="http://www.twitter.com/@contact.value.Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <span class="far fa-file-alt" onclick="hide(@contact.i)"></span>
+                                <a href="mailto:@contact.value.Email" target="_blank"><span class="far fa-envelope"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-footer">
+                        <p id="note">@contact.value.Note</p>   
+                        <p id="lastaccess" time="@contact.value.Lasttimeaccess"></p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="panel panel-danger">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="panel panel-success">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-            </div>
-        </div>
+        }
     </div>
 </div>
-<br>
+
+<script>
+    window.addEventListener('load', function () {
+        let contacts = this.document.querySelectorAll('#lastaccess');
+
+        for (let cont of contacts) {
+
+            let now = new Date();
+            now = now.getHours();
+
+            let arg = cont.getAttribute('time');
+
+            if ((now - Number(arg.slice(2))) > 0) {
+                cont.innerHTML = "Last time online more than 1 day";
+            }
+            else {
+                arg = arg.slice(11);
+                arg = arg.substring(0, arg.length - 6);
+                cont.innerHTML = `Last time online ${arg} hour(s)`;
+            }
+        }
+    })
+</script>
+
+
+<script>
+    function hide(n) {
+        document.querySelectorAll('#note')[n].classList.toggle('show');
+    }
+</script>
