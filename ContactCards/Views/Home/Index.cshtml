@@ -4,8 +4,6 @@
     ViewBag.Title = "Main page";
 }
 
-
-
 <div class="container">
     <div class="row">
         @foreach (var contact in Model.Select((value, i) => new { i, value }))
@@ -42,12 +40,13 @@
 <div class="container">
     <div class="row">
         <a href="~/home/addcontact" class="btn btn-primary">Add contact</a>
-    </div>
-    
+    </div>  
 </div>
 
 
 
+
+<!-- Show last access time -->
     <script>
         window.addEventListener('load', function () {
             let contacts = this.document.querySelectorAll('#lastaccess');
@@ -72,6 +71,7 @@
     </script>
 
 
+<!-- Open/close Notes-->
     <script>
         function hide(n) {
             document.querySelectorAll('#note')[n].classList.toggle('show');
