@@ -1,14 +1,21 @@
 ﻿#image {
-    height: 160px;
+    height: 10rem !important;
     margin-top: 30px;
     margin-bottom: 20px;
 }
 
-.panel > .panel-body, .panel-footer {
+.card {
+    margin-top: 20px;
+}
+
+.card > .card-body, .card-footer {
     background-image: none;
     background-color: white;
-    text-align: center;
-    font-size: 24px;
+}
+
+.card.noborder {
+    border-bottom: none;
+    box-shadow: none;
 }
 
 body {
@@ -16,23 +23,22 @@ body {
     text-align: center;
 }
 
-/*p {
-
-    color: #767373;
+p {
     font-size: 16px;
-    font-weight:500;
-}*/
+}
 
 .pname {
     color: #716565;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 28px;
 }
 
 #note {
-    font-size: 16px;
+    font-size: 18px;
     color: #454343;
     font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
     display: none;
 }
 
@@ -41,128 +47,53 @@ body {
     font-size: 16px;
 }
 
-/*#lastaccess, #meettimetext {
+#lastaccess, #meettimetext, .control-label {
+    color: #9c9797;
     font-weight: 600;
-}*/
+}
 
 #lastaccess {
     text-align: left;
-    font-weight: bold;
+    margin-left: 10px;
+    position: relative;
+    top: 20px;
 }
 
 .icons > * {
     margin: 10px;
+    font-size: 24px;
 }
 
-
-
-
-
-
-
-/*a {
-  color: #0366d6;
+.pbody {
+    margin-top: 20px;
+    width: 75%;
 }
 
-a:hover {
-    color: dodgerblue;
-    background-color: transparent;
-    text-decoration: none;
+.icons {
+    width: 25%;
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+.btn {
+    display: inline;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
-html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 14px;
-  }
+#addform {
+    text-align: left;
 }
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
+@media (max-width: 768px) {
+    .icons > * {
+        display: block;
+    }
 
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
+    .icons {
+        margin-top: 40px;
+    }
 
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    #meettimetext {
+        display: none;
+        text-align: center;
+    }
 }
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-    margin-bottom: 60px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-#myTable th {
-    color: royalblue
-}
-
-#myTable th:hover{
-    color: dodgerblue
-}
-
-#search {
-    position: relative;
-    right: 100px;
-    margin: 20px 0;
-}
-
-#counter {
-    position: relative;
-    left: 550px;
-    font-weight: bold;
-}
-
-#header-wrapper {
-    background-color: #f1f1f1;
-    padding: 20px;
-}
-
-#header a {
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
-    position: relative;
-    right: 80px;
-    color: black;
-}
-
-#header a:hover {
-    color: darkgray;
-}
-
-.form-horizontal{
-    margin: 20px;
-}
-
-#editform{
-    margin: 20px;
-}
-
-#editform label{
-    font-weight: bold;
-}*/
-
-/*#fakeinput {
-    z-index: 0; 
-    position: absolute;
-}
-
-#fileinput {
-    z-index:2; 
-    opacity:0;
-}
-*/

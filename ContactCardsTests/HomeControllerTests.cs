@@ -60,7 +60,6 @@ namespace ContactCardsTests
         }
 
 
-
         [Fact]
         public void IndexReturnsViewWithContacts()
         {
@@ -97,7 +96,5 @@ namespace ContactCardsTests
 
             Assert.IsType<BadRequestResult>(result);
         }
-
-
     }
 }
