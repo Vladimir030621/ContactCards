@@ -3,8 +3,6 @@ using ContactCards.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-#nullable disable
-
 namespace ContactCards.Domain
 {
     public partial class ContactsdbContext : DbContext

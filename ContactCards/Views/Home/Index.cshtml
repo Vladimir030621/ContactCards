@@ -6,7 +6,7 @@
 
 <div class="container">
     <div class="row">
-        @foreach (var contact in Model.Select((value, i) => new { i, value }))
+       @foreach (var contact in Model.Select((value, i) => new { i, value }))
         {
             <div class="col-md-4">
                 <div class="card">
@@ -58,7 +58,8 @@
 
                 let arg = cont.getAttribute('time');
 
-                if ((now - Number(arg.slice(2))) > 0) {
+                if (Number(now - Number(arg.slice(2))) > 0) {
+                    
                     cont.innerHTML = "Last time online more than 1 day";
                 }
                 else {

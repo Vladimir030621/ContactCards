@@ -62,11 +62,11 @@ namespace ContactCards.Controllers
             }           
         }
 
-        #region Save input csv file
+        #region Save image file
         /// <summary>
-        /// Save input csv file
+        /// Save image file
         /// </summary>
-        /// <param name="inputFile"></param>
+        /// <param name="imageFile"></param>
         /// <returns></returns>
         private string SaveImageFile(IFormFile imageFile)
         {
